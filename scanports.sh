@@ -62,7 +62,7 @@ if [ $(id -u ) -eq "0" ]; then
 	echo -e "${red}Comprobando dependencias..${end}"; sleep 2
 	dependencies
 	echo
-	toilet --font mono12 --filter border:metal --termwidth 'SCAN-PORTS'
+	toilet --font mono12 --filter border:metal --termwidth 'Port-Scan'
 	echo
 	scaner
 
@@ -71,4 +71,5 @@ else
 	echo -e "${red}[*]${end} Debes ejecutar el script como root"; sleep 1
 	echo -e "\n ${red}EJEMPLO:${end} sudo bash scanports.sh"; sleep 1
 	exit 1
+	
 fi
