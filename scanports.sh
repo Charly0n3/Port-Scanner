@@ -1,7 +1,7 @@
 #!/bin/bash
 #Autor: Ch4rly0n3
 
-#Colors
+# Colors
 
 green="\e[0;32m\033[1m"
 red="\e[0;31m\033[1m"
@@ -12,7 +12,7 @@ turquoise="\e[0;36m\033[1m"
 gray="\e[0;37m\033[1m"
 end="\033[0m\e[0m"
 
-### Dependencies ###
+# Dependencies
 
 dependencies() {
         dep=(nc toilet)
