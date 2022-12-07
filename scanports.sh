@@ -38,7 +38,7 @@ scaner() {
 	read -p "--> " target
 	echo
 	echo -e "${green}[!]${end} Comenzando el escaneo.."; echo; sleep 2;
-	for i in $(seq 1 100); do
+	for i in $(seq 1 1000); do
 
 		nc -zv $target $i 2> /dev/null
 
