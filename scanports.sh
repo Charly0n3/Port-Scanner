@@ -24,7 +24,7 @@ dependencies() {
                         echo -e "\n${green}- [V]${end} $program \n"
                 else
                         echo -e "${red}- [X]${end} $program"
-                        echo -e "[*] Instalando herramienta.."
+                        echo -e "${red}[*]${end} Instalando herramienta.."; sleep 1
                         apt-get install $program -y > /dev/null 2>&1
                 fi
         done
