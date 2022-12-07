@@ -1,7 +1,7 @@
 #!/bin/bash
 #Autor: Ch4rly0n3
 
-# Colors
+#Colors
 
 green="\e[0;32m\033[1m"
 red="\e[0;31m\033[1m"
@@ -12,7 +12,7 @@ turquoise="\e[0;36m\033[1m"
 gray="\e[0;37m\033[1m"
 end="\033[0m\e[0m"
 
-# Dependencies
+### Dependencies ###
 
 dependencies() {
         dep=(nc toilet)
@@ -21,12 +21,13 @@ dependencies() {
                 test -f /usr/bin/$program
 
                 if [ "$(echo $?)" == "0" ]; then
-                        echo -e "\n${green}- [V]${end} $program \n"
+                        echo -e "\n${green}- [V]${end} $program \n"; sleep 2
                 else
                         echo -e "${red}- [X]${end} $program"
 			echo
-                        echo -e "${red}[*]${end} Instalando herramienta.."; sleep 1
-                        apt-get install $program -y > /dev/null 2>&1
+                        echo -e "${red}- [*]${end} Instalando herramienta.."; sleep 1
+                        echo
+			apt-get install $program -y > /dev/null 2>&1; sleep 4; clear
                 fi
         done
 }
@@ -39,7 +40,7 @@ scaner() {
 	read -p "--> " target
 	echo
 	echo -e "${green}[!]${end} Comenzando el escaneo.."; echo; sleep 2;
-	for i in $(seq 1 1000); do
+	for i in $(seq 1 100); do
 
 		nc -zv $target $i 2> /dev/null
 
@@ -63,7 +64,7 @@ if [ $(id -u ) -eq "0" ]; then
 	echo -e "${red}Comprobando dependencias..${end}"; sleep 2
 	dependencies
 	echo
-	toilet --font mono12 --filter border:metal --termwidth 'Port-Scan'
+	toilet --font mono12 --filter border:metal --termwidth 'SCAN-PORTS'
 	echo
 	scaner
 
